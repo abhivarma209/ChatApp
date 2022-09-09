@@ -27,7 +27,7 @@ io.on('connection',socket=>{
   //Broadcast when a user connects
   socket.broadcast.to(room).emit('message',formatMessage(botName,`${username} has joined the chat `))
 
-   //Send users and room info
+   //Send users and room 
   io.to(room).emit('roomUsers',{
     room:room,
     users:getRoomUsers(room)
